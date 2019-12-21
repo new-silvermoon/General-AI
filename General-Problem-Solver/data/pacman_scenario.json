@@ -1,0 +1,30 @@
+{
+    "start": ["at bottom", "hungry", "spoon at middle", "no spoon"],
+    "end": ["not hungry"],
+    "actions": [
+	{
+	    "action_name": "collect spoon",
+	    "conditions": ["spoon at middle", "at middle"],
+	    "states_to_be_added": ["has spoon"],
+	    "states_to_be_deleted": ["at bottom","no spoon"]
+	},
+	{
+	    "action_name": "move to middle",
+	    "conditions": ["at bottom"],
+	    "states_to_be_added": ["at middle"],
+	    "states_to_be_deleted": ["at bottom"]
+	},
+      {
+	    "action_name": "move to pellet",
+	    "conditions": ["at middle"],
+	    "states_to_be_added": ["at pellet"],
+	    "states_to_be_deleted": ["at middle"]
+	},
+	{
+	    "action_name": "eat pellet",
+	    "conditions": ["has spoon","at pellet"],
+	    "states_to_be_added": ["not hungry"],
+	    "states_to_be_deleted": ["hungry"]
+	}
+    ]
+}
